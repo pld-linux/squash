@@ -1,13 +1,16 @@
-Summary:	Squeeze is a simple application with a simple purpose - a batch image resizer.
+Summary:	Squeeze is a simple application with a simple purpose - a batch image resizer
 Name:		squeeze
 Version:	0.2
 Release:	0.1
 License:	GPL v2
-Group:		Applications
+Group:		X11/Applications/Graphics
 Source0:	http://squeeze.googlecode.com/files/%{name}-%{version}.tar.bz2
 # Source0-md5:	6a996e78b8cf4b638b43a1eaed5fa967
 URL:		http://code.google.com/p/squeeze/
-#BuildRequires:	-
+BuildRequires:	QtCore-devel
+BuildRequires:	QtGui-devel
+BuildRequires:	qt4-build
+BuildRequires:	qt4-qmake
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -20,7 +23,7 @@ Windows.
 %setup -q
 
 %build
-%configure
+qt4-qmake Makefile.qmake "CONFIG %{!?debug:+}%{?debug:-}= release" "CONFIG %{!?debug:-}%{?debug:+}= debug"
 %{__make}
 
 %install
