@@ -1,6 +1,7 @@
 # TODO
 # - CC, optflags
-Summary:	Squeeze is a simple application with a simple purpose - a batch image resizer
+Summary:	Squeeze - a simple application with a simple purpose - a batch image resizer
+Summary(pl.UTF-8):	Squeeze - prosta aplikacja o prostym zastosowaniu - wsadowe skalowanie obrazów
 Name:		squeeze
 Version:	0.2
 Release:	2
@@ -20,6 +21,12 @@ Squeeze allows resizing of images in a batch mode. It is friendly and
 usable and does one thing well - resizing images. It is a
 multi-threaded application and is designed to run on Linux, Mac and
 Windows.
+
+%description -l pl.UTF-8
+Squeeze umożliwia zmianę rozmiaru obrazów w trybie wsadowym. Jest
+przyjazny w użyciu i wykonuje swoje jedyne zadanie bardzo dobrze. Jest
+aplikacją wielowątkową, zaprojektowaną do uruchamiania pod Linuksem,
+MacOS-em i Windows.
 
 %prep
 %setup -q
