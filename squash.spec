@@ -11,8 +11,8 @@ Source0:	http://squeeze.googlecode.com/files/%{name}-%{version}.tar.bz2
 URL:		http://code.google.com/p/squeeze/
 BuildRequires:	QtCore-devel >= 4.3.0
 BuildRequires:	QtGui-devel >= 4.3.0
-BuildRequires:	qt4-build >= 4.3.0
-BuildRequires:	qt4-qmake >= 4.3.0
+BuildRequires:	qt4-build >= 4.3.3-3
+BuildRequires:	qt4-qmake >= 4.3.3-3
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -25,7 +25,9 @@ Windows.
 %setup -q
 
 %build
-qt4-qmake Makefile.qmake "CONFIG %{!?debug:+}%{?debug:-}= release" "CONFIG %{!?debug:-}%{?debug:+}= debug"
+qmake-qt4 Makefile.qmake \
+	"CONFIG %{!?debug:+}%{?debug:-}= release" \
+	"CONFIG %{!?debug:-}%{?debug:+}= debug"
 %{__make}
 
 %install
