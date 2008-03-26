@@ -4,11 +4,12 @@ Summary:	Squeeze - a simple application with a simple purpose - a batch image re
 Summary(pl.UTF-8):	Squeeze - prosta aplikacja o prostym zastosowaniu - wsadowe skalowanie obrazów
 Name:		squeeze
 Version:	0.2
-Release:	2
+Release:	3
 License:	GPL v2
 Group:		X11/Applications/Graphics
 Source0:	http://squeeze.googlecode.com/files/%{name}-%{version}.tar.bz2
 # Source0-md5:	6a996e78b8cf4b638b43a1eaed5fa967
+Source1:	%{name}.desktop
 URL:		http://code.google.com/p/squeeze/
 BuildRequires:	QtCore-devel >= 4.3.0
 BuildRequires:	QtGui-devel >= 4.3.0
@@ -39,8 +40,10 @@ qmake-qt4 Makefile.qmake \
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT%{_bindir}
+install -d $RPM_BUILD_ROOT{%{_desktopdir},%{_pixmapsdir},%{_bindir}}
 install squeeze $RPM_BUILD_ROOT%{_bindir}
+cp -a %{SOURCE1} $RPM_BUILD_ROOT%{_desktopdir}/squeeze.desktop
+cp -a qrc/squeeze.png $RPM_BUILD_ROOT%{_pixmapsdir}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -49,3 +52,5 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc AUTHORS
 %attr(755,root,root) %{_bindir}/squeeze
+%{_desktopdir}/squeeze.desktop
+%{_pixmapsdir}/squeeze.png
