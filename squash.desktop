@@ -1,0 +1,10 @@
+[Desktop Entry]
+Encoding=UTF-8
+Type=Application
+Name=Squeeze
+GenericName=Image Resizer
+Comment=Batch Image Resizer
+Exec=squeeze
+Icon=squeeze
+Terminal=false
+Categories=Graphics;Qt;
