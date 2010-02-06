@@ -4,7 +4,7 @@ Summary:	Squeeze - a simple application with a simple purpose - a batch image re
 Summary(pl.UTF-8):	Squeeze - prosta aplikacja o prostym zastosowaniu - wsadowe skalowanie obrazów
 Name:		squeeze
 Version:	0.2
-Release:	4
+Release:	5
 License:	GPL v2
 Group:		X11/Applications/Graphics
 Source0:	http://squeeze.googlecode.com/files/%{name}-%{version}.tar.bz2
