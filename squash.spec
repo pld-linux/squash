@@ -1,10 +1,8 @@
-# TODO
-# - CC, optflags
 Summary:	Squeeze - a simple application with a simple purpose - a batch image resizer
 Summary(pl.UTF-8):	Squeeze - prosta aplikacja o prostym zastosowaniu - wsadowe skalowanie obrazów
 Name:		squeeze
 Version:	0.2
-Release:	5
+Release:	6
 License:	GPL v2
 Group:		X11/Applications/Graphics
 Source0:	http://squeeze.googlecode.com/files/%{name}-%{version}.tar.bz2
@@ -32,16 +30,19 @@ MacOS-em i Windows.
 %prep
 %setup -q
 
+sed -i -e 's,-O3,%{rpmcxxflags} %{rpmcppflags},;s,-gstabs+,,' Makefile.qmake
+
 %build
 qmake-qt4 Makefile.qmake \
 	"CONFIG %{!?debug:+}%{?debug:-}= release" \
 	"CONFIG %{!?debug:-}%{?debug:+}= debug"
-%{__make}
+%{__make} \
+	CXX="%{__cxx}"
 
 %install
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT{%{_desktopdir},%{_pixmapsdir},%{_bindir}}
-install squeeze $RPM_BUILD_ROOT%{_bindir}
+install -p squeeze $RPM_BUILD_ROOT%{_bindir}
 cp -a %{SOURCE1} $RPM_BUILD_ROOT%{_desktopdir}/squeeze.desktop
 cp -a qrc/squeeze.png $RPM_BUILD_ROOT%{_pixmapsdir}
 
