@@ -2,7 +2,7 @@ Summary:	Squash - a simple application with a simple purpose - a batch image res
 Summary(pl.UTF-8):	Squash - prosta aplikacja o prostym zastosowaniu - wsadowe skalowanie obrazów
 Name:		squash
 Version:	0.3
-Release:	1
+Release:	2
 License:	GPL v2
 Group:		X11/Applications/Graphics
 Source0:	http://squash.googlecode.com/files/%{name}-%{version}.tar.bz2

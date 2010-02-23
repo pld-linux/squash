@@ -1,12 +1,12 @@
 [Desktop Entry]
 Encoding=UTF-8
 Type=Application
-Name=Squeeze
+Name=Squash
 GenericName=Image Resizer
 GenericName[pl]=Skalowanie obrazów
 Comment=Batch Image Resizer
 Comment[pl]=Wsadowe skalowanie obrazów
-Exec=squeeze
-Icon=squeeze
+Exec=squash
+Icon=squash
 Terminal=false
 Categories=Graphics;Qt;
